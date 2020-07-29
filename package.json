@@ -1,0 +1,40 @@
+{
+  "name": "weather-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index",
+    "webpack": "webpack --config webpack.config.ts",
+    "debug": "node --nolazy --inspect-brk=7000 dist/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jpvallejo/weather-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jpvallejo/weather-api/issues"
+  },
+  "homepage": "https://github.com/Jpvallejo/weather-api#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.7",
+    "@types/helmet": "0.0.47",
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "ts-loader": "^8.0.1",
+    "webpack": "^4.44.0",
+    "webpack-node-externals": "^2.5.0"
+  }
+}
