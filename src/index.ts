@@ -6,6 +6,8 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import { errorHandler } from "./middleware/error.middleware";
+import { notFoundHandler } from "./middleware/notFound.middleware";
 
 dotenv.config();
 
@@ -28,6 +30,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+
+app.use(errorHandler);
+app.use(notFoundHandler);
+
 /**
  * Server Activation
  */
@@ -45,8 +51,8 @@ interface WebpackHotModule {
     hot?: {
         data: any;
         accept(
-        dependencies: string[],
-        callback?: (updatedDependencies: ModuleId[]) => void,
+            dependencies: string[],
+            callback?: (updatedDependencies: ModuleId[]) => void,
         ): void;
         accept(dependency: string, callback?: () => void): void;
         accept(errHandler?: (err: Error) => void): void;
