@@ -9,6 +9,8 @@ import helmet from "helmet";
 import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/notFound.middleware";
 
+import { weatherRouter } from "./routers/weatherRouter";
+
 dotenv.config();
 
 /**
@@ -29,6 +31,8 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
+app.use(weatherRouter);
 
 
 app.use(errorHandler);
