@@ -10,6 +10,7 @@ import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/notFound.middleware";
 
 import { weatherRouter } from "./routers/weatherRouter";
+import { locationRouter } from "./routers/locationRouter";
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use(weatherRouter);
+app.use(locationRouter);
 
 
 app.use(errorHandler);
