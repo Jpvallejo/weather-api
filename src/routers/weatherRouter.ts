@@ -28,9 +28,9 @@ weatherRouter.get("/current/:city?", async (req: Request, res: Response) => {
 
 weatherRouter.get("/forecast/:city?", async (req: Request, res: Response) => {
     try {
-        const city = req.params.city ? req.params.city : await geoLocationService.getCity();
+        const latlon: any = await (req.params.city? geoLocationService.getCityLatLon(req.params.city): geoLocationService.getLatLon());
 
-        const weather = await weatherService.getForecastWeather(city);
+        const weather = await weatherService.getForecastWeather(latlon.lat, latlon.lon);
 
         res.send(weather);
     }
