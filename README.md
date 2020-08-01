@@ -17,8 +17,8 @@ A NodeJS API to get current and forecasted weather.
 ## `/location`
     Returns your current location based on your device's IP.
 ## `/current[/city?]`
-    Returns the current weather on the given city. If ```city``` is not provided, uses the device's IP city
+    Returns the current weather on the given city. If city is not provided, uses the device's IP city
 
 ## `/forecast[/city?]`
     Returns the forecasted weather for the next 4 days on the given city. 
-    If ```city``` is not provided, uses the device's IP city
+    If city is not provided, uses the device's IP city
