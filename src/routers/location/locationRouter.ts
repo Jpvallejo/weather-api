@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { GeolocationService } from "../services/geolocationService";
+import { GeolocationService } from "../../services/geolocationService";
 const geoLocationService = new GeolocationService();
 /**
  * Router Definition

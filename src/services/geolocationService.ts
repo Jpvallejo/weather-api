@@ -32,7 +32,7 @@ export class GeolocationService {
           });
     }
 
-    public async getCity(){
+    public async getCity(): Promise<string>{
         const url = process.env.IP_API_URL ?? "";
         return axios.get(url).then((response) => {
             return response.data.city;

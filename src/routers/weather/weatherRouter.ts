@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import { GeolocationService } from "../services/geolocationService";
-import { WeatherService } from "../services/weatherService";
+import { GeolocationService } from "../../services/geolocationService";
+import { WeatherService } from "../../services/weatherService";
 
 const weatherService = new WeatherService();
 const geoLocationService = new GeolocationService();

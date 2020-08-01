@@ -4,7 +4,7 @@ const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: ["webpack/hot/poll?100", "./src/index.ts"],
+    entry: ["webpack/hot/poll?100", "./src/server.ts"],
     watch: true,
     target: "node",
     externals: [
@@ -28,6 +28,6 @@ module.exports = {
     plugins: [new webpack.HotModuleReplacementPlugin(), new CleanWebpackPlugin()],
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "index.js"
+        filename: "server.js"
     }
 };

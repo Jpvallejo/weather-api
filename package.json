@@ -1,12 +1,19 @@
 {
   "name": "weather-api",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index",
+    "start": "node dist/server",
     "webpack": "webpack --config webpack.config.ts",
-    "debug": "node --nolazy --inspect-brk=7000 dist/index"
+    "debug": "node --nolazy --inspect-brk=7000 dist/index",
+    "test": "jest --setupFiles dotenv/config"
   },
   "repository": {
     "type": "git",
@@ -20,23 +27,32 @@
   },
   "homepage": "https://github.com/Jpvallejo/weather-api#readme",
   "devDependencies": {
+    "@types/chai": "^4.2.12",
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.7",
     "@types/helmet": "0.0.47",
+    "@types/mocha": "^8.0.0",
     "@types/node": "^14.0.27",
+    "@types/sinon": "^9.0.4",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.0",
     "should": "^13.2.3",
+    "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@types/jest": "^26.0.8",
     "axios": "^0.19.2",
     "clean-webpack-plugin": "^3.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.23.3",
-    "jest": "^26.1.0",
+    "jest": "^26.2.2",
+    "sinon": "^9.0.2",
     "supertest": "^4.0.2",
+    "ts-jest": "^26.1.4",
     "ts-loader": "^8.0.1",
     "webpack": "^4.44.0",
     "webpack-node-externals": "^2.5.0"
